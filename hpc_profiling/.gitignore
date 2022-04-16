@@ -1,0 +1,6 @@
+.o
+.mod
+.mpi
+.serial
+.omp
+__pycache__
