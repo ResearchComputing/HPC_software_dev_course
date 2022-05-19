@@ -1,2 +1,1 @@
-May base on software carpentries: 
-https://swcarpentry.github.io/git-novice
+CU Research Computing: Version Control with Git/GitHub
