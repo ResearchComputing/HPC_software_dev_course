@@ -10,8 +10,8 @@ Users of high performance computing (HPC) can greatly benefit from the ability t
 This three-part short course will cover the following topics: 
 
 1. __May 19, 2022, 3:00p-4:00p:__  _Software version control with git_: An introduction to creating, managing, versioning and sharing software repositories on Github.
-2. __May 20, 2022, 11:00a-12:00p:__ _Fundamentals of MPI programming_: An overview of the basic principles that enable software to be parallelized. Examples will focus on the "c" programming language, though principles are broadly applicable so experience with "c" is not needed. 
-3. __May 20, 2022, 1:00p-2:00p:__ A "quick start" guide to _profiling_ (systematically analyzing software to identify and address bottlenecks) and _scaling_ (iteratively running MPI software for different numbers of cores, or different problem sizes, in order to determine the most efficient configuration on a given HPC cluster).
+2. __May 20, 2022, 10:00a-11:00p:__ A "quick start" guide to _profiling_ (systematically analyzing software to identify and address bottlenecks) and _scaling_ (iteratively running MPI software for different numbers of cores, or different problem sizes, in order to determine the most efficient configuration on a given HPC cluster).
+3. __May 20, 2022, 1:00p-2:00p:__ _Fundamentals of MPI programming_: An overview of the basic principles that enable software to be parallelized. Examples will focus on the "c" programming language, though principles are broadly applicable so experience with "c" is not needed. 
 
 While you may benefit most from taking all thre courses together, if your schedule is limited and you can only take 1-2 modules, each module will be designed to be as self-contained as possible.
 
