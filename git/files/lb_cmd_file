@@ -1,0 +1,4 @@
+python hello_world.py 1;
+python hello_world.py 2;
+python hello_world.py 3;
+python hello_world.py 4;
