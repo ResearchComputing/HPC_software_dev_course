@@ -1,7 +1,8 @@
 ## Workshop Series: Introduction to software development for High Performance Computing
 
-### Instructor
-Andrew Monaghan, Research Computing, University of Colorado
+### Instructors
+Gerardo Hidalgo-Cuellar, Mea Trahan, Andrew Monaghan
+Research Computing, University of Colorado
 
 ### Description:
 
