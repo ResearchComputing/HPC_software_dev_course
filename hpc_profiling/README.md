@@ -70,6 +70,42 @@ Add timing wrappers around subsections of code (internal):
 
 #### Example
 
+Let's use _arm_forge_ to profile an mpi program written in "c" called "wave.c". You'll find all of the files you need in this repository.
+
+Step 1: Start an interactive job with 4 cores. (e.g., `sinteractive -N 1 -n 4`)
+
+Step 2: Load the modules you need:
+
+```
+module load gcc/10.2.0
+module load openmpi
+module load allinea
+```
+
+Step 3: Compile the "wave_c.c" 
+
+```
+make
+```
+
+Step 4: Run map on the executable:
+
+```
+ map --profile mpirun -np 4 ./wave_c 3
+```
+
+...this will create a summary file called `wave_c_4p_<date>.map` (where <date> is today's date)
+ 
+Step 5: Now view the output to identify bottlenecks (requires X11-forwarding)
+ 
+```
+ map wave_c_4p_2022-05-20_09-18.map
+```
+ 
+...which will produce an interactive screen that looks like this:
+ 
+<img src="images/allinea_map_results_screen.png" width="90%" />
+
 
 
 ---
