@@ -53,22 +53,8 @@ Add timing wrappers around subsections of code (internal) (_Example code can be 
 time internal_timing.py
 ```
 
-...let's inspect the code: 
-```python
-    import time
-    ntests = 100
-    n = 16384
-    t1 = time.time()
-    a = numpy.zeros(n,dtype='float64')
-    b = numpy.zeros(n,dtype='float64')
-    for i in range(n):
-        imod = i % 2
-        a[i] = i*i
-        b[i] = a[i]*i*(-1)**imod
-    t2 = time.time()
-    dt = t2-t2
-    print('Init time (s): ', dt)
-    ```
+let's inspect the code...it uses the ___python___ `time` package and some simple calls. 
+
 
 * _Pros:_ also relatively fast, easy. Helps isolate where bottlenecks occur.
 * _Cons:_ Doesn't provide information about why bottlenecks occur
