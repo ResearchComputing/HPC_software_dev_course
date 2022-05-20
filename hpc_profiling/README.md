@@ -99,20 +99,19 @@ Step 4: If successful, this will result in the executable `wave_c`. Run map on t
  map --profile mpirun -np 4 ./wave_c 3
 ```
 
-...this will create a summary file called `wave_c_4p_<date>.map` (where <date> is today's date)
- 
+_this will create a summary file called `wave_c_4p_(date).map` (where (date) is today's date)_
+
 Step 5: Now view the output to identify bottlenecks (requires X11-forwarding)
- 
+
 ```
- map wave_c_4p_2022-05-20_09-18.map
+map wave_c_4p_2022-05-20_09-18.map
 ```
- 
-which will produce an interactive screen that looks like this:
+
+_which will produce an interactive screen that looks like this:_
  
 <img src="images/allinea_map_results_screen.png" width="90%" />
 
-With the results screen open, you can scroll through and find areas of the code that took the longest to run (these will be highlighted).  If you identify bottlenecks, you would then iteratively work to improve them (not covered in this tutorial)
-
+Now, with the results screen open, you can scroll through and find areas of the code that took the longest to run (these will be highlighted).  If you identify bottlenecks, you would then iteratively work to improve them (not covered in this tutorial). 
 
 ---
 
@@ -120,15 +119,19 @@ With the results screen open, you can scroll through and find areas of the code 
  
 ### _Scaling is running multiple iterations of a parallel application, with each iteraction using a different number of cores, and then comparing the results to determine how the _efficiency_ of the code changes with the number of cores._ 
  
-* Done with parallel code only (serial is already running at max efficiency)
+#### Efficiency
 
-* Efficiency is the difference between what the code would ideally take to run versus what it actually takes. 
-* real world: not 100% efficient.  Ask group why(?)
- * communications overhead
- * “fabric” latency (road – dirt road vs expressway)
- * processes waiting on each other (1 car vs many)
- * limitations of problem size
- * limitations of what can be parallelized (Amdahl’s law)
+`Efficiency = Expected Time /  Actual Time` where: 
+* _Expected_ ("ideal") time is often taken relative to application’s serial performance, or performance at a low core count.
+* _Actual_ time is the result of your scaling run.
+
+
+In the real world, parallel processes are not 100% efficient due to:
+* communications overhead
+  * “fabric” latency 
+  * processes waiting on each other 
+* limitations of problem size
+* limitations of what parts of the code can be parallelized (Amdahl’s law)
  
 * therefore, we scale code to find optimal efficiency for our situation
    * If operational application (weather forecast), you want to find the optimal efficiency that enables the job to be completed in time for the product deadline.  You may not achieve maximum efficiency. 
