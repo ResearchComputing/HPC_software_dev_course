@@ -1,7 +1,7 @@
 
 # Tutorial: A Quick Start to Profiling and Scaling 
 
-### Objectives: 
+## Objectives: 
 
 _To gain a beginners understanding of:_
 
@@ -10,12 +10,65 @@ _To gain a beginners understanding of:_
 
 ---
 
-### Profiling
+## Profiling
 
-#### What is profiling? 
+### _Profiling is measuring the performance of your code_
 
-__Profiling__ is measuring the performance of your code
-  * _goal_: identify issues and rectify them so that code runs faster
+
+#### _Goal_: identify issues and rectify them so that code runs faster:
+
+<img src="images/allinea_profiling.png" width="50%" />
+ 
+###### Source: Allinea
+
+
+
+#### Profiling is part of the coding cycle:
+
+
+<img src="images/allinea_coding_cycle.png" width="50%" />
+
+###### Source: Allinea
+
+### Incredibly Simple Profiling
+
+Time the program externally with the Linux `time` function: 
+
+```
+$ time mycode.exe
+```
+
+* _Pros:_ fast, easy
+* _Cons:_ Doesn't provide information about where or why bottlenecks occur
+* Use cases 
+  * when you already know where a bottleneck is within the code. 
+  * code is relatively simple (e.g., a single-file script)
+
+### Simple profiling 
+
+Add timing wrappers around subsections of code (internal):
+
+```
+```
+
+* _Pros:_ also relatively fast, easy. Helps isolate where bottlenecks occur.
+* _Cons:_ Doesn't provide information about why bottlenecks occur
+* Use cases: 
+  * when you do not know where bottleneck is
+  * code is relatively simple 
+
+### Software-based profiling
+
+* Vendor-based software. CURC has:
+  * [Arm-Forge](https://developer.arm.com/Tools%20and%20Software/Arm%20Forge) (formerly Allinea)
+  * Intel: [VTune](https://www.intel.com/content/www/us/en/develop/documentation/vtune-help/top.html) (basic profiling), [Advisor](https://www.intel.com/content/www/us/en/develop/documentation/get-started-with-advisor/top.html) (vectorization/threading), [Trace Analyzer](https://www.intel.com/content/www/us/en/develop/documentation/get-started-with-itac/top.html) (MPI)
+* Community-based software that you can download for free, install on your own
+  * [GNU Profile](https://ftp.gnu.org/old-gnu/Manuals/gprof-2.9.1/html_mono/gprof.html) (`gprof`)
+  * [AMD uprof](https://developer.amd.com/amd-uprof)
+  * [HPC Toolkit](http://hpctoolkit.org)
+  * Lots of others: [Oprofile](https://oprofile.sourceforge.io/news/), [perf](https://perf.wiki.kernel.org/index.php/Tutorial#Introduction) [TAU](https://www.cs.uoregon.edu/research/tau/home.php), [Scalasca](https://www.scalasca.org)
+
+#### Example
 
 
 
