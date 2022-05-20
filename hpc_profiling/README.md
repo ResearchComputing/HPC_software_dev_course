@@ -70,7 +70,7 @@ Add timing wrappers around subsections of code (internal):
 
 #### Example
 
-Let's use _arm_forge_ to profile an mpi program written in "c" called "wave.c". You'll find all of the files you need in this repository.
+Let's use _arm_forge_ to profile an mpi program written in ___c___ called `wave.c`. You'll find all of the files you need in this repository.
 
 Step 1: Start an interactive job with 4 cores. (e.g., `sinteractive -N 1 -n 4`)
 
@@ -82,13 +82,13 @@ module load openmpi
 module load allinea
 ```
 
-Step 3: Compile the "wave_c.c" 
+Step 3: In the directory where you downloaded `wave.c` 
 
 ```
 make
 ```
 
-Step 4: Run map on the executable:
+Step 4: If successful, this will result in the executable `wave_c`. Run map on the executable:
 
 ```
  map --profile mpirun -np 4 ./wave_c 3
@@ -106,6 +106,7 @@ Step 5: Now view the output to identify bottlenecks (requires X11-forwarding)
  
 <img src="images/allinea_map_results_screen.png" width="90%" />
 
+With the results screen open, you can scroll through and find areas of the code that took the longest to run (these will be highlighted).  If you identify bottlenecks, you would then iteratively work to improve them (not covered in this tutorial)
 
 
 ---
