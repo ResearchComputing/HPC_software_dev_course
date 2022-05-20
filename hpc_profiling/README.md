@@ -117,36 +117,42 @@ Now, with the results screen open, you can scroll through and find areas of the 
 
 ## Scaling
  
-### _Scaling is running multiple iterations of a parallel application, with each iteraction using a different number of cores, and then comparing the results to determine how the _efficiency_ of the code changes with the number of cores._ 
+### _Scaling is the trial-and-error process of running multiple iterations of a parallel application, with each iteration using a different number of threads (cores), and then comparing the results to determine how the _efficiency_ of the code changes with the number of threads._ 
  
 #### Efficiency
 
-`Efficiency = Expected Time /  Actual Time` where: 
+##### `Efficiency = Expected Time /  Actual Time` where: 
 * _Expected_ ("ideal") time is often taken relative to application’s serial performance, or performance at a low core count.
 * _Actual_ time is the result of your scaling run.
 
-
-In the real world, parallel processes are not 100% efficient due to:
+##### In the real world, parallel processes are not 100% efficient due to:
 * communications overhead
   * “fabric” latency 
   * processes waiting on each other 
 * limitations of problem size
 * limitations of what parts of the code can be parallelized (Amdahl’s law)
- 
-* therefore, we scale code to find optimal efficiency for our situation
-   * If operational application (weather forecast), you want to find the optimal efficiency that enables the job to be completed in time for the product deadline.  You may not achieve maximum efficiency. 
-   * If research application (climate model projections) then you typically will strive to achieve the maximum efficiency possible, 
-   * This will almost always mean running with the *fewest* cores possible while remaining under the wall clock limits on HPC (24 hours typically, on our system)
- 
-* Rule of thumb: >=80% efficiency is pretty good. 
-* scaling is a trial-and-error process! 
-* Two types of scaling
-   * strong
- <img src="images/strong_scaling.png" width="90%" />
- 
-   * weak
-  <img src="images/weak_scaling.png" width="90%" />
 
+_Therefore, the efficiency will typically decrease as the number of threads increases._
+ 
+##### The "Optimal" efficiency for a particular workflow depends on the context
+   * If you have an operational application, say a weather forecast that needs to be produced in a specific timeframe, you'll want to find the optimal efficiency that enables the job to be completed in time for the product deadline.  You may be satisfied to run with a relatively low efficiency as long as the job is done in time. 
+   * If you have a research application, whereby you aren't constrained by near-term deadlines, then you typically will strive to achieve the maximum efficiency possible. This will almost always mean running with the *fewest* cores possible while remaining under the wall clock limits on HPC (24 hours typically, on our system)
+ 
+__Rule of thumb:__ >=80% efficiency is pretty good. 
+ 
+##### Types of Scaling
+
+___Strong___
+
+Keep the problem size constant and keep increasing the number of threads (cores).
+
+ <img src="images/strong_scaling.png" width="90%" />
+
+___Weak___
+
+Increase both the problem size and the number of threads (cores) in a consistent manner (e.g., double the problem size if you double the cores).
+
+  <img src="images/weak_scaling.png" width="90%" />
 
 
 ---
