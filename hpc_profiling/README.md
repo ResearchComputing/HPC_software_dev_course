@@ -137,9 +137,12 @@ With the results screen open, you can scroll through and find areas of the code 
  
 * Rule of thumb: >=80% efficiency is pretty good. 
 * scaling is a trial-and-error process! 
-* Two types of scalin
+* Two types of scaling
    * strong
+ <img src="images/strong_scaling.png" width="90%" />
+ 
    * weak
+  <img src="images/weak_scaling.png" width="90%" />
 
 
 
