@@ -117,6 +117,29 @@ With the results screen open, you can scroll through and find areas of the code 
 ---
 
 ### Scaling
+ 
+* Done with parallel code only (serial is already running at max efficiency)
+
+* Efficiency is the difference between what the code would ideally take to run versus what it actually takes. 
+* real world: not 100% efficient.  Ask group why(?)
+ * communications overhead
+ * “fabric” latency (road – dirt road vs expressway)
+ * processes waiting on each other (1 car vs many)
+ * limitations of problem size
+ * limitations of what can be parallelized (Amdahl’s law)
+ 
+* therefore, we scale code to find optimal efficiency for our situation
+   * If operational application (weather forecast), you want to find the optimal efficiency that enables the job to be completed in time for the product deadline.  You may not achieve maximum efficiency. 
+   * If research application (climate model projections) then you typically will strive to achieve the maximum efficiency possible, 
+   * This will almost always mean running with the *fewest* cores possible while remaining under the wall clock limits on HPC (24 hours typically, on our system)
+ 
+* Rule of thumb: >=80% efficiency is pretty good. 
+* scaling is a trial-and-error process! 
+* Two types of scalin
+   * strong
+   * weak
+
+
 
 ---
 
