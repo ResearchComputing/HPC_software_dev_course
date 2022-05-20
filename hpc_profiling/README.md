@@ -118,7 +118,7 @@ With the results screen open, you can scroll through and find areas of the code 
 
 ## Scaling
  
-### _Scaling is running multiple iterations of a parallel application, with each iteraction using a different number of cores, and then comparing the results to determine how the _efficiency_ of the code changes with the number of cores. 
+### _Scaling is running multiple iterations of a parallel application, with each iteraction using a different number of cores, and then comparing the results to determine how the _efficiency_ of the code changes with the number of cores._ 
  
 * Done with parallel code only (serial is already running at max efficiency)
 
