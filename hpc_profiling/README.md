@@ -32,11 +32,13 @@ _To gain a beginners understanding of:_
 
 ### Incredibly Simple Profiling
 
-Time the program externally with the Linux `time` function: 
+Time the program externally with the Linux `time` function (_Example code can be found in `simple_examples` subdirectory_): 
 
 ```
-$ time mycode.exe
+$ time external_timing.py
 ```
+
+
 
 * _Pros:_ fast, easy
 * _Cons:_ Doesn't provide information about where or why bottlenecks occur
@@ -46,9 +48,10 @@ $ time mycode.exe
 
 ### Simple profiling 
 
-Add timing wrappers around subsections of code (internal):
+Add timing wrappers around subsections of code (internal) (_Example code can be found in `simple_examples` subdirectory_): 
 
 ```
+time internal_timing.py
 ```
 
 * _Pros:_ also relatively fast, easy. Helps isolate where bottlenecks occur.
