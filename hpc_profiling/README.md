@@ -107,7 +107,7 @@ Step 5: Now view the output to identify bottlenecks (requires X11-forwarding)
  map wave_c_4p_2022-05-20_09-18.map
 ```
  
-...which will produce an interactive screen that looks like this:
+which will produce an interactive screen that looks like this:
  
 <img src="images/allinea_map_results_screen.png" width="90%" />
 
@@ -116,7 +116,9 @@ With the results screen open, you can scroll through and find areas of the code 
 
 ---
 
-### Scaling
+## Scaling
+ 
+### _Scaling is running multiple iterations of a parallel application, with each iteraction using a different number of cores, and then comparing the results to determine how the _efficiency_ of the code changes with the number of cores. 
  
 * Done with parallel code only (serial is already running at max efficiency)
 
