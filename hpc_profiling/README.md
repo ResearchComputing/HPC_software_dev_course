@@ -35,7 +35,8 @@ _To gain a beginners understanding of:_
 Time the program externally with the Linux `time` function (_Example code can be found in `simple_examples` subdirectory_): 
 
 ```
-$ time external_timing.py
+module load python
+time python external_timing.py
 ```
 
 
@@ -50,7 +51,8 @@ $ time external_timing.py
 Add timing wrappers around subsections of code (internal) (_Example code can be found in `simple_examples` subdirectory_): 
 
 ```
-time internal_timing.py
+module load python
+time python internal_timing.py
 ```
 
 let's inspect the code...it uses the ___python___ `time` package and some simple calls. 
