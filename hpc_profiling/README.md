@@ -75,41 +75,56 @@ let's inspect the code...it uses the ___python___ `time` package and some simple
 
 #### Example
 
-Let's use _arm_forge_ to profile an mpi program written in ___c___ called `wave.c`. You'll find all of the files you need in this repository.
+Let's use _Vtune_ to profile an mpi program written in ___c___ called `wave.c`. You'll find all of the files you need in this repository.
 
-Step 1: Start an interactive job with 4 cores. (e.g., `sinteractive -N 1 -n 4`)
+Step 1: Login
 
-Step 2: Load the modules you need:
-
+_Option A:_ If you have a CURC account:
 ```
-module load gcc/10.2.0
-module load openmpi
-module load allinea
+ssh -X <yourusername>@login.rc.colorado.edu
 ```
 
-Step 3: In the directory where you downloaded `wave.c` 
+_Option B:_ If you do not have a CURC account, get a temporary username and password from the instructor:
+```
+ssh -X userNNNN@tlogin1.rc.colorado.edu
+```
+
+Step 2: Start an interactive job with 4 cores. 
+
+```
+module load slurm/alpine
+salloc -N 1 -n 4 -t 60 --reservation=tutorial --x11 srun --pty /bin/bash
+```
+
+Step 3: Load the modules you need:
+
+```
+module load intel impi vtune
+```
+
+Step 4: In the directory where you downloaded `wave.c`, compile it with `make`:
 
 ```
 make
 ```
 
-Step 4: If successful, this will result in the executable `wave_c`. Run map on the executable:
+Step 5: If successful, this will result in the executable `wave_c`. Run vtune on the executable:
 
 ```
- map --profile mpirun -np 4 ./wave_c 3
+vtune -collect hotspot mpirun -n 4 ./wave_c
 ```
 
-_this will create a summary file called `wave_c_4p_(date).map` (where (date) is today's date)_
+_this will take about 1 minute and will create a directory called something like r000hs that contains results_
 
-Step 5: Now view the output to identify bottlenecks (requires X11-forwarding)
+Step 6: Now view the output to identify bottlenecks (requires X11-forwarding)
 
 ```
-map wave_c_4p_2022-05-20_09-18.map
+vtune-gui r000hs
 ```
 
 _which will produce an interactive screen that looks like this:_
  
-<img src="images/allinea_map_results_screen.png" width="90%" />
+<img src="images/vtune_map_results_screen.png" width="90%" />
 
 Now, with the results screen open, you can scroll through and find areas of the code that took the longest to run (these will be highlighted).  If you identify bottlenecks, you would then iteratively work to improve them (not covered in this tutorial). 
 
