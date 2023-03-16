@@ -1,7 +1,8 @@
 ## Workshop Series: Introduction to software development for High Performance Computing
 
 ### Instructors
-Gerardo Hidalgo-Cuellar, Mea Trahan, Andrew Monaghan
+Presenter: Andrew Monaghan
+Contributions from: Gerardo Hidalgo-Cuellar, Mea Trahan
 Research Computing, University of Colorado
 
 ### Description:
