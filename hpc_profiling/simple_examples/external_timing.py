@@ -14,7 +14,7 @@ def maxabs(a,b):
     return c
 
 def main():
-    ntests = 100
+    ntests = 1000
     n = 16384
     a = numpy.zeros(n,dtype='float64')
     b = numpy.zeros(n,dtype='float64')
