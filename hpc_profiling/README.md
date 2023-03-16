@@ -181,7 +181,7 @@ Increase both the problem size and the number of threads (cores) in a consistent
 * Please consider providing feedback on this tutorial via this brief survey: http://tinyurl.com/curc-survey18
 
 * Links to resources that informed this presentation
-  * [Intel Vtune documentation(https://www.intel.com/content/www/us/en/docs/vtune-profiler/user-guide/2023-0)
+  * [Intel Vtune docs](https://www.intel.com/content/www/us/en/docs/vtune-profiler/user-guide/2023-0)
   * [SDSC profiling tutorial](https://education.sdsc.edu/training/interactive/hpc_user_training_2021/week7/) 
   * [U. Utah CHPC profiling slides](https://www.chpc.utah.edu/presentations/images-and-pdfs/Profiling20.pdf)
   * [Arm-Forge/Allinea profiling and debugging slides](https://www.alcf.anl.gov/files/Allinea.pdf)
