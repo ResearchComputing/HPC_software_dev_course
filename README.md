@@ -2,6 +2,7 @@
 
 ### Instructors
 Presenter: Andrew Monaghan
+
 Contributions from: Gerardo Hidalgo-Cuellar, Mea Trahan
 Research Computing, University of Colorado
 
