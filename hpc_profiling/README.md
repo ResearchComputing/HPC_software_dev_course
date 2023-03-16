@@ -126,7 +126,7 @@ _which will produce an interactive screen that looks like this:_
  
 <img src="images/vtune_map_results_screen.png" width="90%" />
 
-Now, with the results screen open, you can scroll through and find areas of the code that took the longest to run (these will be highlighted).  If you identify bottlenecks, you would then iteratively work to improve them (not covered in this tutorial). 
+Now, with Vtune graphical user interface (gui), you can find areas of the code that took the longest to run. If you identify bottlenecks, you would then iteratively work to improve them (not covered in this tutorial). 
 
 ---
 
@@ -179,12 +179,12 @@ Increase both the problem size and the number of threads (cores) in a consistent
 * Please consider providing feedback on this tutorial via this brief survey: http://tinyurl.com/curc-survey18
 
 * Links to resources that informed this presentation
+  * [Intel Vtune documentation(https://www.intel.com/content/www/us/en/docs/vtune-profiler/user-guide/2023-0)
   * [SDSC profiling tutorial](https://education.sdsc.edu/training/interactive/hpc_user_training_2021/week7/) 
   * [U. Utah CHPC profiling slides](https://www.chpc.utah.edu/presentations/images-and-pdfs/Profiling20.pdf)
   * [Arm-Forge/Allinea profiling and debugging slides](https://www.alcf.anl.gov/files/Allinea.pdf)
 
 * Acknowledgements
   * Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation.
-  * Summit is supported by the National Science Foundation (awards ACI-1532235 and ACI-1532236), the University of Colorado Boulder, and Colorado State University.
   * Blanca is jointly funded by computing users and the University of Colorado Boulder.
   * XDMoD is funded under NSF grant numbers ACI 1025159 and ACI 1445806.
