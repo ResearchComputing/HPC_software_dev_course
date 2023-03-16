@@ -95,7 +95,7 @@ Step 2: Start an interactive job with 4 cores.
 
 ```
 module load slurm/alpine
-salloc -N 1 -n 4 -t 60 --reservation=tutorial --x11 srun --pty /bin/bash
+sinteractive -N 1 -n 4 -t 60 --reservation=tutorial
 ```
 
 Step 3: Load the modules you need:
